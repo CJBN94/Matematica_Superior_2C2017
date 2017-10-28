@@ -1,0 +1,2 @@
+c:\users\julia\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
+C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
