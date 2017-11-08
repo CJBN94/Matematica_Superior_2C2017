@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGraficador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraficador.Designer.cs">
+      <DependentUpon>frmGraficador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Seleccionar_Funcionalidades_Principales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGraficador.resx">
+      <DependentUpon>frmGraficador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu_Seleccionar_Funcionalidades_Principales.resx">
       <DependentUpon>Menu_Seleccionar_Funcionalidades_Principales.cs</DependentUpon>
     </EmbeddedResource>
