@@ -28,66 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnFijarDecimales = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnIngresarDatos = new System.Windows.Forms.Button();
+            this.txtCantidadDeDecimales = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnQuitarTodos = new System.Windows.Forms.Button();
+            this.btnQuitarPunto = new System.Windows.Forms.Button();
+            this.btnAgregarPunto = new System.Windows.Forms.Button();
+            this.dgvPuntos = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCoordenadaY = new System.Windows.Forms.TextBox();
+            this.txtCoordenadaX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuntos)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // btnCancelar
             // 
-            this.button3.Location = new System.Drawing.Point(570, 290);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 23);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Quitar Todos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(613, 38);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(93, 23);
+            this.btnCancelar.TabIndex = 43;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button2
+            // btnFijarDecimales
             // 
-            this.button2.Location = new System.Drawing.Point(570, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Quitar Punto";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFijarDecimales.Location = new System.Drawing.Point(476, 38);
+            this.btnFijarDecimales.Name = "btnFijarDecimales";
+            this.btnFijarDecimales.Size = new System.Drawing.Size(94, 23);
+            this.btnFijarDecimales.TabIndex = 42;
+            this.btnFijarDecimales.Text = "Fijar Decimales";
+            this.btnFijarDecimales.UseVisualStyleBackColor = true;
+            this.btnFijarDecimales.Click += new System.EventHandler(this.btnFijarDecimales_Click);
             // 
-            // button1
+            // label7
             // 
-            this.button1.Location = new System.Drawing.Point(570, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Agregar Punto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(57, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(336, 13);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Ingrese los puntos que desea utilizar para la aproximación";
             // 
-            // dataGridView1
+            // btnIngresarDatos
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnIngresarDatos.Location = new System.Drawing.Point(298, 443);
+            this.btnIngresarDatos.Name = "btnIngresarDatos";
+            this.btnIngresarDatos.Size = new System.Drawing.Size(196, 32);
+            this.btnIngresarDatos.TabIndex = 40;
+            this.btnIngresarDatos.Text = "Ingresar Datos";
+            this.btnIngresarDatos.UseVisualStyleBackColor = true;
+            this.btnIngresarDatos.Click += new System.EventHandler(this.btnIngresarDatos_Click);
+            // 
+            // txtCantidadDeDecimales
+            // 
+            this.txtCantidadDeDecimales.Location = new System.Drawing.Point(187, 38);
+            this.txtCantidadDeDecimales.Name = "txtCantidadDeDecimales";
+            this.txtCantidadDeDecimales.Size = new System.Drawing.Size(243, 20);
+            this.txtCantidadDeDecimales.TabIndex = 39;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(57, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 13);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Cantidad De Decimales :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(57, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(284, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "¿Con qué cantidad de decimales desea trabajar?";
+            // 
+            // btnQuitarTodos
+            // 
+            this.btnQuitarTodos.Location = new System.Drawing.Point(613, 349);
+            this.btnQuitarTodos.Name = "btnQuitarTodos";
+            this.btnQuitarTodos.Size = new System.Drawing.Size(94, 23);
+            this.btnQuitarTodos.TabIndex = 36;
+            this.btnQuitarTodos.Text = "Quitar Todos";
+            this.btnQuitarTodos.UseVisualStyleBackColor = true;
+            this.btnQuitarTodos.Click += new System.EventHandler(this.btnQuitarTodos_Click);
+            // 
+            // btnQuitarPunto
+            // 
+            this.btnQuitarPunto.Location = new System.Drawing.Point(613, 303);
+            this.btnQuitarPunto.Name = "btnQuitarPunto";
+            this.btnQuitarPunto.Size = new System.Drawing.Size(94, 23);
+            this.btnQuitarPunto.TabIndex = 35;
+            this.btnQuitarPunto.Text = "Quitar Punto";
+            this.btnQuitarPunto.UseVisualStyleBackColor = true;
+            this.btnQuitarPunto.Click += new System.EventHandler(this.btnQuitarPunto_Click);
+            // 
+            // btnAgregarPunto
+            // 
+            this.btnAgregarPunto.Location = new System.Drawing.Point(613, 255);
+            this.btnAgregarPunto.Name = "btnAgregarPunto";
+            this.btnAgregarPunto.Size = new System.Drawing.Size(94, 23);
+            this.btnAgregarPunto.TabIndex = 34;
+            this.btnAgregarPunto.Text = "Agregar Punto";
+            this.btnAgregarPunto.UseVisualStyleBackColor = true;
+            this.btnAgregarPunto.Click += new System.EventHandler(this.btnAgregarPunto_Click);
+            // 
+            // dgvPuntos
+            // 
+            this.dgvPuntos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPuntos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvPuntos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPuntos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.X,
             this.Y});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 196);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(532, 117);
-            this.dataGridView1.TabIndex = 16;
+            this.dgvPuntos.Location = new System.Drawing.Point(60, 199);
+            this.dgvPuntos.MultiSelect = false;
+            this.dgvPuntos.Name = "dgvPuntos";
+            this.dgvPuntos.ReadOnly = true;
+            this.dgvPuntos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPuntos.Size = new System.Drawing.Size(532, 228);
+            this.dgvPuntos.TabIndex = 33;
             // 
             // X
             // 
@@ -105,122 +178,80 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 169);
+            this.label4.Location = new System.Drawing.Point(57, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 15;
+            this.label4.TabIndex = 32;
             this.label4.Text = "Puntos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 90);
+            this.label3.Location = new System.Drawing.Point(95, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 14;
+            this.label3.TabIndex = 31;
             this.label3.Text = "Punto";
             // 
-            // textBox2
+            // txtCoordenadaY
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(243, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtCoordenadaY.Location = new System.Drawing.Point(187, 143);
+            this.txtCoordenadaY.Name = "txtCoordenadaY";
+            this.txtCoordenadaY.Size = new System.Drawing.Size(243, 20);
+            this.txtCoordenadaY.TabIndex = 30;
             // 
-            // textBox1
+            // txtCoordenadaX
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtCoordenadaX.Location = new System.Drawing.Point(187, 111);
+            this.txtCoordenadaX.Name = "txtCoordenadaX";
+            this.txtCoordenadaX.Size = new System.Drawing.Size(243, 20);
+            this.txtCoordenadaX.TabIndex = 29;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 143);
+            this.label2.Location = new System.Drawing.Point(95, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 28;
             this.label2.Text = "Coordenada Y :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 115);
+            this.label1.Location = new System.Drawing.Point(95, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 10;
+            this.label1.TabIndex = 27;
             this.label1.Text = "Coordenada X :";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(284, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "¿Con qué cantidad de decimales desea trabajar?";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(139, 35);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(243, 20);
-            this.textBox3.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Cantidad De Decimales :";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(254, 345);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(196, 32);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Ingresar Datos";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(336, 13);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Ingrese los puntos que desea utilizar para la aproximación";
-            // 
-            // Form3
+            // Form_Inicio_Ingresa_Datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 389);
+            this.ClientSize = new System.Drawing.Size(765, 487);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnFijarDecimales);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.btnIngresarDatos);
+            this.Controls.Add(this.txtCantidadDeDecimales);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnQuitarTodos);
+            this.Controls.Add(this.btnQuitarPunto);
+            this.Controls.Add(this.btnAgregarPunto);
+            this.Controls.Add(this.dgvPuntos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCoordenadaY);
+            this.Controls.Add(this.txtCoordenadaX);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "Form_Inicio_Ingresa_Datos";
+            this.Text = "Ingreso De Puntos";
+            this.Load += new System.EventHandler(this.Form_Inicio_Ingresa_Datos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuntos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,22 +259,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnFijarDecimales;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnIngresarDatos;
+        private System.Windows.Forms.TextBox txtCantidadDeDecimales;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnQuitarTodos;
+        private System.Windows.Forms.Button btnQuitarPunto;
+        private System.Windows.Forms.Button btnAgregarPunto;
+        private System.Windows.Forms.DataGridView dgvPuntos;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCoordenadaY;
+        private System.Windows.Forms.TextBox txtCoordenadaX;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label7;
+
     }
 }
