@@ -16,7 +16,7 @@ namespace WindowsFormsApplication5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Inicio_Ingresa_Datos());
+            //Application.Run(new Form_Inicio_Ingresa_Datos());
 
             //Prueba de funcion exponencial(OK)
             
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication5
                 "coeficiente b: " + Funcion_Potencial.b, "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
             */
 
-            //Prueba de funcion hiperbolica(pendiente)
+            //Prueba de funcion hiperbolica(OK)
 
             /*
             Funcion_Hiperbolica f = new Funcion_Hiperbolica();
