@@ -16,7 +16,7 @@ namespace WindowsFormsApplication5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form_Inicio_Ingresa_Datos());
+            Application.Run(new Form_Inicio_Ingresa_Datos());
 
             //Prueba de funcion exponencial(OK)
             

@@ -14,7 +14,7 @@ namespace WindowsFormsApplication5
     public partial class Form_Inicio_Ingresa_Datos : Form
     {
         public static int cantidadDeDecimales;
-        public static double[][] puntos;
+        public static double[,] puntos;
         public static int cantidadDePuntos;
         public static double sumatoriaX;
         public static double sumatoriaXCuadrado;
@@ -270,9 +270,29 @@ namespace WindowsFormsApplication5
             funcionHiperbolica.generarCoeficientes();
             funcionPotencial.generarCoeficientes();
             */
-            Menu_Seleccionar_Funcionalidades_Principales frmSeleccionDeFuncionalidades = new Menu_Seleccionar_Funcionalidades_Principales();
+            /*Menu_Seleccionar_Funcionalidades_Principales frmSeleccionDeFuncionalidades = new Menu_Seleccionar_Funcionalidades_Principales();
             frmSeleccionDeFuncionalidades.Visible = true;
-            this.Visible = false;
+            this.Visible = false;*/
+
+            llenarMatrizDePuntos();
+        }
+
+        //llena la matriz de puntos desde el DGV
+        private void llenarMatrizDePuntos()
+        {
+            int i, cantPuntos;
+
+            cantPuntos = dgvPuntos.RowCount - 1;
+            puntos = new double[cantPuntos, 2];
+
+
+            for (i = 0; i < cantPuntos; i++)
+            {
+                puntos[i, 0] = Convert.ToDouble(dgvPuntos.Rows[i].Cells["X"].Value);
+                puntos[i, 1] = Convert.ToDouble(dgvPuntos.Rows[i].Cells["Y"].Value);
+                MessageBox.Show(puntos[i, 0] + " " + puntos[i, 1]);
+            }
+
         }
 
         //Metodo que calcula los valores de las sumatorias (no funciona)
