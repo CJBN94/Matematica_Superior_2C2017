@@ -6,36 +6,45 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication5
 {
-    class Funcion_Hiperbolica : Funcion
+    public class Funcion_Hiperbolica
     {
 
-        public static double a;
-        public static double b;
+        private double a;
+        private double b;
 
-        public void generarCoeficientes()
+        public Funcion_Hiperbolica()
         {
 
+            double sumatoriaXCuadrado = Form_Inicio_Ingresa_Datos.sumatoriaXCuadrado;
+            double sumatoriaX = Form_Inicio_Ingresa_Datos.sumatoriaX;
+            double sumatoriaXDivididoY = Form_Inicio_Ingresa_Datos.sumatoriaXDivididoY;
+            double sumatoriaUnoDivididoY = Form_Inicio_Ingresa_Datos.sumatoriaUnoDivididoY;
+            int cantidadDePuntos = Form_Inicio_Ingresa_Datos.cantidadDePuntos;
+            int cantidadDeDecimales = Form_Inicio_Ingresa_Datos.cantidadDeDecimales;
             /*
-            double sumatoriaXCuadrado = Form3.sumatoriaXCuadrado;
-            double sumatoriaX = Form3.sumatoriaX;
-            double sumatoriaXDivididoY = Form3.sumatoriaXDivididoY;
-            double sumatoriaUnoDivididoY = Form3.sumatoriaUnoDivididoY;
-            int cantidadDePuntos = Form3.cantidadDePuntos;
-            */
-
             double sumatoriaXCuadrado = 55;
             double sumatoriaX = 15;
             double sumatoriaXDivididoY = 1.7718;
             double sumatoriaUnoDivididoY = 0.6457;
             int cantidadDePuntos = 5;
-
+            */
             //double bMayuscula = 0;
             //double aMayuscula1 = (sumatoriaXDivididoY - bMayuscula * sumatoriaX) / sumatoriaXCuadrado;
             //double aMayuscula2 = (sumatoriaUnoDivididoY - bMayuscula * cantidadDePuntos) / sumatoriaX;
-            double bMayuscula = (sumatoriaX * sumatoriaXDivididoY - sumatoriaUnoDivididoY * sumatoriaXCuadrado) / ((sumatoriaX * sumatoriaX) - (cantidadDePuntos * sumatoriaXCuadrado));
-            double aMayuscula = (sumatoriaUnoDivididoY - bMayuscula * cantidadDePuntos) / sumatoriaX;
-            a = 1 / aMayuscula;
-            b = bMayuscula * a;
+            double bMayuscula = Math.Round((sumatoriaX * sumatoriaXDivididoY - sumatoriaUnoDivididoY * sumatoriaXCuadrado) / ((sumatoriaX * sumatoriaX) - (cantidadDePuntos * sumatoriaXCuadrado)),cantidadDeDecimales);
+            double aMayuscula = Math.Round((sumatoriaUnoDivididoY - bMayuscula * cantidadDePuntos) / sumatoriaX, cantidadDeDecimales);
+            a = Math.Round(1 / aMayuscula,cantidadDeDecimales);
+            b = Math.Round(bMayuscula * a, cantidadDeDecimales);
+        }
+
+        public double getCoeficienteA()
+        {
+            return a;
+        }
+
+        public double getCoeficienteB()
+        {
+            return b;
         }
 
     }

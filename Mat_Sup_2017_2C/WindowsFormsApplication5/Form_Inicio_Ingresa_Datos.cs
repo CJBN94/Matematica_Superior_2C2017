@@ -33,13 +33,12 @@ namespace WindowsFormsApplication5
         public static double sumatoriaLogaritmoXAlCuadrado;
         public static double sumatoriaLogaritmoXLogaritmoY;
 
-        /*Funciones
+        //Funciones
         public static Funcion_Lineal funcionLineal;
         public static Funcion_Exponencial funcionExponencial;
         public static Funcion_Hiperbolica funcionHiperbolica;
         public static Funcion_Potencial funcionPotencial;
-        public static Funcion_Cuadratica funcionCuadrarica;
-        */
+        public static Funcion_Cuadratica funcionCuadratica;
 
         public Form_Inicio_Ingresa_Datos()
         {
@@ -275,24 +274,65 @@ namespace WindowsFormsApplication5
             this.Visible = false;*/
 
             llenarMatrizDePuntos();
+            generarFunciones();
+            mostrarValores();
+
         }
 
         //llena la matriz de puntos desde el DGV
         private void llenarMatrizDePuntos()
         {
-            int i, cantPuntos;
+            int i;
+            double x;
+            double y;
 
-            cantPuntos = dgvPuntos.RowCount - 1;
-            puntos = new double[cantPuntos, 2];
+            cantidadDePuntos = dgvPuntos.RowCount - 1;
+            puntos = new double[cantidadDePuntos, 2];
 
 
-            for (i = 0; i < cantPuntos; i++)
+            for (i = 0; i < cantidadDePuntos; i++)
             {
-                puntos[i, 0] = Convert.ToDouble(dgvPuntos.Rows[i].Cells["X"].Value);
-                puntos[i, 1] = Convert.ToDouble(dgvPuntos.Rows[i].Cells["Y"].Value);
-                MessageBox.Show(puntos[i, 0] + " " + puntos[i, 1]);
+                x = Convert.ToDouble(dgvPuntos.Rows[i].Cells["X"].Value);
+                y = Convert.ToDouble(dgvPuntos.Rows[i].Cells["Y"].Value);
+
+                //puntos[i, 0] = Convert.ToDouble(dgvPuntos.Rows[i].Cells["X"].Value);
+                //puntos[i, 1] = Convert.ToDouble(dgvPuntos.Rows[i].Cells["Y"].Value);
+
+                puntos[i, 0] = x;
+                puntos[i, 1] = y;
+
+                sumatoriaX = Math.Round((sumatoriaX + x), cantidadDeDecimales);
+                sumatoriaXCuadrado = Math.Round((sumatoriaXCuadrado + (x * x)), cantidadDeDecimales);
+                sumatoriaXCubo = Math.Round((sumatoriaXCubo + (x * x * x)), cantidadDeDecimales);
+                sumatoriaXCuarta = Math.Round((sumatoriaXCuarta + (x * x * x * x)), cantidadDeDecimales);
+                sumatoriaLogaritmoX = Math.Round((sumatoriaLogaritmoX + Math.Log(x)), cantidadDeDecimales);
+                sumatoriaY = Math.Round((sumatoriaY + y), cantidadDeDecimales);
+                sumatoriaYCuadrado = Math.Round((sumatoriaYCuadrado + (y * y)), cantidadDeDecimales);
+                sumatoriaXY = Math.Round((sumatoriaXY + (x * y)), cantidadDeDecimales);
+                sumatoriaXLogaritmoY = Math.Round((sumatoriaXLogaritmoY + (x * Math.Log(y))), cantidadDeDecimales);
+                sumatoriaXConYCuadrado = Math.Round((sumatoriaXConYCuadrado + (x * (y * y))), cantidadDeDecimales);
+                sumatoriaLogaritmoY = Math.Round((sumatoriaLogaritmoY + Math.Log(y)), cantidadDeDecimales);
+
+                sumatoriaXCuadradoY = Math.Round((sumatoriaXCuadradoY + ((x * x) * Math.Log(y))), cantidadDeDecimales);
+                sumatoriaXDivididoY = Math.Round((sumatoriaXDivididoY + (x / y)), cantidadDeDecimales);
+                sumatoriaUnoDivididoY = Math.Round((sumatoriaUnoDivididoY + (1 / y)), cantidadDeDecimales);
+                sumatoriaLogaritmoXAlCuadrado = Math.Round((sumatoriaLogaritmoXAlCuadrado + Math.Pow(Math.Log(x), 2)), cantidadDeDecimales);
+                sumatoriaLogaritmoXLogaritmoY = Math.Round((sumatoriaLogaritmoXLogaritmoY + (Math.Log(x) * Math.Log(y))), cantidadDeDecimales);
+
+                //cantidadDePuntos += 1;
+
+                //MessageBox.Show(puntos[i, 0] + " " + puntos[i, 1]);
             }
 
+        }
+
+        private void generarFunciones()
+        {
+            funcionLineal = new Funcion_Lineal();
+            funcionCuadratica = new Funcion_Cuadratica();
+            funcionExponencial = new Funcion_Exponencial();
+            funcionPotencial = new Funcion_Potencial();
+            funcionHiperbolica = new Funcion_Hiperbolica();
         }
 
         //Metodo que calcula los valores de las sumatorias (no funciona)
@@ -344,6 +384,8 @@ namespace WindowsFormsApplication5
             }*/
         }
 
+        //Metodo debug de sumatorias
+
         private void mostrarValores()
         {
             MessageBox.Show("sumatoriaX: " + sumatoriaX + "\n" +
@@ -357,8 +399,41 @@ namespace WindowsFormsApplication5
                 "sumatoriaXLogaritmoY: " + sumatoriaXLogaritmoY + "\n" +
                 "sumatoriaXConYCuadrado: " + sumatoriaXConYCuadrado + "\n" +
                 "sumatoriaLogaritmoY: " + sumatoriaLogaritmoY + "\n" +
+                "sumatoriaXCuadradoY: " + sumatoriaXCuadradoY + "\n" +
+                "sumatoriaXDivididoY: " + sumatoriaXDivididoY + "\n" +
+                "sumatoriaUnoDivididoY: " + sumatoriaUnoDivididoY + "\n" +
+                "sumatoriaLogaritmoXAlCuadrado: " + sumatoriaLogaritmoXAlCuadrado + "\n" +
+                "sumatoriaLogaritmoXLogaritmoY: " + sumatoriaLogaritmoXLogaritmoY + "\n" +
                 "cantidadDePuntos: " + cantidadDePuntos, "Calculos",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //Prueba de funcion exponencial(OK)
+
+            MessageBox.Show("coeficiente a: " + funcionExponencial.getCoeficienteA() + "\n" +
+                "coeficiente b: " + funcionExponencial.getCoeficienteB(), "Prueba",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            
+
+            //Prueba de funcion cuadratica(OK)
+
+            MessageBox.Show("coeficiente a: " + funcionCuadratica.getCoeficienteA() + "\n" +
+                "coeficiente b: " + funcionCuadratica.getCoeficienteB() + "\n" +
+                "coeficiente c: " + funcionCuadratica.getCoeficienteC(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+            //Prueba de funcion lineal(OK)
+            MessageBox.Show("coeficiente a: " + funcionLineal.getCoeficienteA() + "\n" +
+                "coeficiente b: " + funcionLineal.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            //Prueba de funcion potencial(OK)
+
+            MessageBox.Show("coeficiente a: " + funcionPotencial.getCoeficienteA() + "\n" +
+                "coeficiente b: " + funcionPotencial.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+
+            //Prueba de funcion hiperbolica(OK)
+
+            MessageBox.Show("coeficiente a: " + funcionHiperbolica.getCoeficienteA() + "\n" +
+                "coeficiente b: " + funcionHiperbolica.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
     }

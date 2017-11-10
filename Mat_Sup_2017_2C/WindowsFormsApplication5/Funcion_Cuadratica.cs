@@ -6,18 +6,29 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication5
 {
-    class Funcion_Cuadratica : Funcion
+    public class Funcion_Cuadratica
     {
 
         private double[,] matriz = new double[3, 4];
-        public static double a;
-        public static double b;
-        public static double c;
+        private double a;
+        private double b;
+        private double c;
 
-
-        public void cargarMatriz()
+        public Funcion_Cuadratica()
         {
-            /*
+            //Cargo la matriz con los valores a usar
+            cargarMatriz();
+            //Verificar si existe algun pivote en las filas que se pueda intercambiar
+            buscarPivoteIntercambiar(matriz);
+            //comenzamos a checkar matriz para ir determinando matriz invertida
+            algoritmoGauss(matriz);
+            //Seteo los coeficientes encontrados de la parabola
+            setearCoeficientes(matriz);
+        }
+
+        private void cargarMatriz()
+        {
+            
             matriz[0, 0] = Form_Inicio_Ingresa_Datos.sumatoriaXCuarta;
             matriz[0, 1] = Form_Inicio_Ingresa_Datos.sumatoriaXCubo;
             matriz[0, 2] = Form_Inicio_Ingresa_Datos.sumatoriaXCuadrado;
@@ -30,8 +41,8 @@ namespace WindowsFormsApplication5
             matriz[2, 1] = Form_Inicio_Ingresa_Datos.sumatoriaX;
             matriz[2, 2] = Form_Inicio_Ingresa_Datos.cantidadDePuntos;
             matriz[2, 3] = Form_Inicio_Ingresa_Datos.sumatoriaY;
-            */
-
+            
+            /*
             matriz[0, 0] = 18971.9348;
             matriz[0, 1] = 2275.352;
             matriz[0, 2] = 291.2;
@@ -44,19 +55,7 @@ namespace WindowsFormsApplication5
             matriz[2, 1] = 42.2;
             matriz[2, 2] = 8;
             matriz[2, 3] = 46.4;
-
-        }
-
-        public void generarCoeficientes()
-        {
-            //Cargo la matriz con los valores a usar
-            cargarMatriz();
-            //Verificar si existe algun pivote en las filas que se pueda intercambiar
-            buscarPivoteIntercambiar(matriz);
-            //comenzamos a checkar matriz para ir determinando matriz invertida
-            algoritmoGauss(matriz);
-            //Seteo los coeficientes encontrados de la parabola
-            setearCoeficientes(matriz);
+            */
         }
 
         private void buscarPivoteIntercambiar(Double[,] matriz)
@@ -90,29 +89,15 @@ namespace WindowsFormsApplication5
 
         }
 
-        public void setearCoeficientes(Double[,] matriz)
+        private void setearCoeficientes(Double[,] matriz)
         {
+            int cantidadDeDecimales = Form_Inicio_Ingresa_Datos.cantidadDeDecimales;
+
             int tamMatriz = matriz.GetUpperBound(1);
-            a = matriz[0, tamMatriz];
-            b = matriz[1, tamMatriz];
-            c = matriz[2, tamMatriz];
+            a = Math.Round(matriz[0, tamMatriz],cantidadDeDecimales);
+            b = Math.Round(matriz[1, tamMatriz],cantidadDeDecimales);
+            c = Math.Round(matriz[2, tamMatriz],cantidadDeDecimales);
         }
-
-        /*
-        private void dibujarResultado(Double[,] matriz)
-        {
-            //int tamMatriz = matriz.GetUpperBound(1);
-
-
-            //Obtengo los resultados en esas posiciones de la matriz[i,tamMatriz]
-            //for (int i = 0; i <= tamMatriz - 1; i++)
-            //{
-                //rchTeOperaciones.Text += "Valor x" + i + " : " + matriz[i, tamMatriz] + Environment.NewLine;
-            //}
-
-
-        }
-    */
 
         private void algoritmoGauss(Double[,] matriz)
         {
@@ -160,6 +145,21 @@ namespace WindowsFormsApplication5
                 pivote++;
             }
 
+        }
+
+        public double getCoeficienteA()
+        {
+            return a;
+        }
+
+        public double getCoeficienteB()
+        {
+            return b;
+        }
+
+        public double getCoeficienteC()
+        {
+            return c;
         }
 
     }

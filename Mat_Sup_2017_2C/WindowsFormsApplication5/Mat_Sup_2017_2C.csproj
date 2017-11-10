@@ -51,7 +51,6 @@
     <Compile Include="frmGraficador.Designer.cs">
       <DependentUpon>frmGraficador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcion.cs" />
     <Compile Include="Funcion_Cuadratica.cs" />
     <Compile Include="Funcion_Exponencial.cs" />
     <Compile Include="Funcion_Hiperbolica.cs" />
