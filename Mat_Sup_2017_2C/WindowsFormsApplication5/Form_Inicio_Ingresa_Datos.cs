@@ -15,13 +15,31 @@ namespace WindowsFormsApplication5
     {
         public static int cantidadDeDecimales;
         public static double[][] puntos;
+        public static int cantidadDePuntos;
         public static double sumatoriaX;
-        public static double sumatoriaY;
         public static double sumatoriaXCuadrado;
-        public static double sumatoriaYCuadrado;
+        public static double sumatoriaXCubo;
+        public static double sumatoriaXCuarta;
         public static double sumatoriaLogaritmoX;
+        public static double sumatoriaY;
+        public static double sumatoriaYCuadrado;
         public static double sumatoriaLogaritmoY;
         public static double sumatoriaXY;
+        public static double sumatoriaXConYCuadrado;
+        public static double sumatoriaXLogaritmoY;
+        public static double sumatoriaXCuadradoY;
+        public static double sumatoriaXDivididoY;
+        public static double sumatoriaUnoDivididoY; // (1/y)
+        public static double sumatoriaLogaritmoXAlCuadrado;
+        public static double sumatoriaLogaritmoXLogaritmoY;
+
+        /*Funciones
+        public static Funcion_Lineal funcionLineal;
+        public static Funcion_Exponencial funcionExponencial;
+        public static Funcion_Hiperbolica funcionHiperbolica;
+        public static Funcion_Potencial funcionPotencial;
+        public static Funcion_Cuadratica funcionCuadrarica;
+        */
 
         public Form_Inicio_Ingresa_Datos()
         {
@@ -98,6 +116,36 @@ namespace WindowsFormsApplication5
             }
 
         }
+         
+        /*
+        private void limitarCantidadDeDecimalesDeLaCoordenadaX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String decimales = cantidadDeDecimales.ToString();
+            bool cumpleLimiteDeDecimales = Regex.IsMatch(txtCoordenadaX.Text, "^\\d*\\,\\d{"+cantidadDeDecimales+"}$");
+            if (cumpleLimiteDeDecimales&&(!char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void limitarCantidadDeDecimalesDeLaCoordenadaY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String decimales = cantidadDeDecimales.ToString();
+
+            if (decimales != "0")
+            {
+                bool cumpleLimiteDeDecimales = Regex.IsMatch(txtCoordenadaY.Text, "^\\d*\\,\\d{" + cantidadDeDecimales + "}$");
+                if (cumpleLimiteDeDecimales && (!char.IsControl(e.KeyChar)))
+                {
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+        */
 
         //Evento que limita la cantidad de decimales de un numero
 
@@ -191,7 +239,7 @@ namespace WindowsFormsApplication5
         {
             btnFijarDecimales.Enabled = true;
             txtCantidadDeDecimales.Enabled = true;
-            btnQuitarTodos_Click(sender, e);
+            btnQuitarTodos_Click(sender,e);
             txtCoordenadaX.Text = "";
             txtCoordenadaY.Text = "";
             this.setearEstadoInicial();
@@ -199,7 +247,91 @@ namespace WindowsFormsApplication5
 
         private void btnIngresarDatos_Click(object sender, EventArgs e)
         {
+            //calcularValores(); //Calcula las sumatorias
+            //mostrarValores(); //Muestra los valores de las sumatorias calculadas (Debug)
 
+            //Guardo las funciones como variables globales y calculo sus coeficientes
+            /*
+            funcionLineal = new Funcion_Lineal();
+            funcionCuadratica = new Funcion_Cuadratica();
+            funcionExponencial = new Funcion_Exponencial();
+            funcionHiperbolica = new Funcion_Hiperbolica();
+            funcionPotencial = new Funcion_Potencial();
+            funcionLineal.generarCoeficientes();
+            funcionCuadratica.generarCoeficientes();
+            funcionExponencial.generarCoeficientes();
+            funcionHiperbolica.generarCoeficientes();
+            funcionPotencial.generarCoeficientes();
+            */
+            Menu_Seleccionar_Funcionalidades_Principales frmSeleccionDeFuncionalidades = new Menu_Seleccionar_Funcionalidades_Principales();
+            frmSeleccionDeFuncionalidades.Visible = true;
+            this.Visible = false;
+        }
+
+        //Metodo que calcula los valores de las sumatorias (no funciona)
+
+        private void calcularValores(){
+            double x = 0;
+            double y = 0;
+
+            for (int i = 0; i < dgvPuntos.Rows.Count; i++)
+            {
+                x = Double.Parse(dgvPuntos.Rows[i].Cells["X"].Value.ToString());
+                y = Double.Parse(dgvPuntos.Rows[i].Cells["Y"].Value.ToString());
+
+                sumatoriaX += x;
+                sumatoriaXCuadrado += (x * x);
+                sumatoriaXCubo += (x * x * x);
+                sumatoriaXCuarta += (x * x * x * x);
+                sumatoriaLogaritmoX += Math.Log(x);
+                sumatoriaY += y;
+                sumatoriaYCuadrado += (y * y);
+                sumatoriaXY += (x * y);
+                sumatoriaXLogaritmoY += (x * Math.Log(y));
+                sumatoriaXConYCuadrado += (x * (y * y));
+                sumatoriaLogaritmoY += Math.Log(y);
+                cantidadDePuntos += 1;
+            }
+
+            /*DataGridViewRowCollection filas = dgvPuntos.Rows;
+            foreach (DataGridViewRow dr in filas)
+            {
+                //string col1 = dr.Cells["X"].Value.ToString();
+                //string col2 = dr.Cells["Y"].Value.ToString();
+                x = Double.Parse(dr.Cells["X"].Value.ToString());
+                y = Double.Parse(dr.Cells["Y"].Value.ToString());
+
+                sumatoriaX += x;
+                sumatoriaXCuadrado += (x * x);
+                sumatoriaXCubo += (x * x * x);
+                sumatoriaXCuarta += (x * x * x * x);
+                sumatoriaLogaritmoX += Math.Log(x);
+                sumatoriaY += y;
+                sumatoriaYCuadrado += (y * y);
+                sumatoriaXY += (x * y);
+                sumatoriaXLogaritmoY += (x * Math.Log(y));
+                sumatoriaXConYCuadrado += (x * (y * y));
+                sumatoriaLogaritmoY += Math.Log(y);
+                cantidadDePuntos += 1;
+
+            }*/
+        }
+
+        private void mostrarValores()
+        {
+            MessageBox.Show("sumatoriaX: " + sumatoriaX + "\n" +
+                "sumatoriaXCuadrado: " + sumatoriaXCuadrado + "\n" +
+                "sumatoriaXCubo: " + sumatoriaXCubo + "\n" +
+                "sumatoriaXCuarta: " + sumatoriaXCuarta + "\n" +
+                "sumatoriaLogaritmoX: " + sumatoriaLogaritmoX + "\n" +
+                "sumatoriaY: " + sumatoriaY + "\n" +
+                "sumatoriaYCuadrado: " + sumatoriaYCuadrado + "\n" +
+                "sumatoriaXY: " + sumatoriaXY + "\n" +
+                "sumatoriaXLogaritmoY: " + sumatoriaXLogaritmoY + "\n" +
+                "sumatoriaXConYCuadrado: " + sumatoriaXConYCuadrado + "\n" +
+                "sumatoriaLogaritmoY: " + sumatoriaLogaritmoY + "\n" +
+                "cantidadDePuntos: " + cantidadDePuntos, "Calculos",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
