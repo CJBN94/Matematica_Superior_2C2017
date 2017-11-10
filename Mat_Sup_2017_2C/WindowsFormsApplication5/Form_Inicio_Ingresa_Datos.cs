@@ -174,18 +174,25 @@ namespace WindowsFormsApplication5
         {
             if (txtCoordenadaX.Text != "" && txtCoordenadaY.Text != "")
             {
-                Double x = Double.Parse(txtCoordenadaX.Text);
-                Double y = Double.Parse(txtCoordenadaY.Text);
+                if (Double.Parse(txtCoordenadaY.Text) != 0)
+                {
+                    Double x = Double.Parse(txtCoordenadaX.Text);
+                    Double y = Double.Parse(txtCoordenadaY.Text);
 
-                dgvPuntos.Rows.Add(x, y);
-                btnQuitarPunto.Enabled = true;
-                btnQuitarTodos.Enabled = true;
-                dgvPuntos.Enabled = true;
-                btnIngresarDatos.Enabled = true;
+                    dgvPuntos.Rows.Add(x, y);
+                    btnQuitarPunto.Enabled = true;
+                    btnQuitarTodos.Enabled = true;
+                    dgvPuntos.Enabled = true;
+                    btnIngresarDatos.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("La Coordenada Y no puede tomar por valor el cero.", "Valor no permitido en coordenada Y", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Coordenada X o Coordenada Y vacía. Inserte ambos valores de las coordenadas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Coordenada X o Coordenada Y vacía. Inserte ambos valores de las coordenadas.", "Coordenadas vacías", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

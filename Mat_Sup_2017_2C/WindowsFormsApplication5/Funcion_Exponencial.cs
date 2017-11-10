@@ -15,7 +15,7 @@ namespace WindowsFormsApplication5
         {
             double sumatoriaX = 7.50;//Form_Inicio_Ingresa_Datos.sumatoriaX;
             double sumatoriaXCuadrado = 11.875;//Form_Inicio_Ingresa_Datos.sumatoriaXCuadrado;
-            double sumatoriaXY = 14.422;//Form_Inicio_Ingresa_Datos.sumatoriaXY;
+            double sumatoriaXLogaritmoY = 14.422;//Form_Inicio_Ingresa_Datos.sumatoriaXLogaritmoY;
             double sumatoriaLogaritmoY = 9.404;//Form_Inicio_Ingresa_Datos.sumatoriaLogaritmoY;
             int cantidadDePuntos = 5;//Form_Inicio_Ingresa_Datos.cantidadDePuntos;
 
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication5
 
             //Estas son las ecuaciones que calculan los coeficientes
             //Una vez obtenidos al leer la tabla, se utilizan aca sin hardcodear
-            double bMayuscula = (sumatoriaX * sumatoriaXY - sumatoriaXCuadrado * sumatoriaLogaritmoY) / (sumatoriaX * sumatoriaX - sumatoriaXCuadrado * cantidadDePuntos);
+            double bMayuscula = (sumatoriaX * sumatoriaXLogaritmoY - sumatoriaXCuadrado * sumatoriaLogaritmoY) / (sumatoriaX * sumatoriaX - sumatoriaXCuadrado * cantidadDePuntos);
             b = Math.Exp(bMayuscula);
             a = (sumatoriaLogaritmoY - cantidadDePuntos * bMayuscula) / sumatoriaX;
         }

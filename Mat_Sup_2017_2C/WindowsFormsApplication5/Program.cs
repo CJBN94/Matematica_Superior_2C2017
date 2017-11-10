@@ -16,15 +16,16 @@ namespace WindowsFormsApplication5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form_Inicio_Ingresa_Datos());
+            Application.Run(new Form_Inicio_Ingresa_Datos());
 
             //Prueba de funcion exponencial(OK)
             
+            /*
             Funcion_Exponencial f = new Funcion_Exponencial();
             f.generarCoeficientes();
             MessageBox.Show("coeficiente a: " + Funcion_Exponencial.a + "\n" +
                 "coeficiente b: " + Funcion_Exponencial.b, "Prueba",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            
+            */
 
             //Prueba de funcion cuadratica(OK)
             /*
