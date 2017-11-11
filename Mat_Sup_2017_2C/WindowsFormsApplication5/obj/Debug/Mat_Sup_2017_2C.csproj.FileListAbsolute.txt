@@ -13,3 +13,6 @@ C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\Windo
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.pdb
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.exe
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb
+C:\FILEs\Matematica Superior\TP 2C2017\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
+C:\FILEs\Matematica Superior\TP 2C2017\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.exe
+C:\FILEs\Matematica Superior\TP 2C2017\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb

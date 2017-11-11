@@ -16,5 +16,21 @@ namespace WindowsFormsApplication5
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Menu_Seleccionar_Funcion_Aproximante menuDeModosDeAproximacion = new Menu_Seleccionar_Funcion_Aproximante();
+
+            Form_Inicio_Ingresa_Datos.swNubeDePuntos = 0;
+            menuDeModosDeAproximacion.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Menu_Seleccionar_Funcion_Aproximante menuDeModosDeAproximacion = new Menu_Seleccionar_Funcion_Aproximante();
+
+            Form_Inicio_Ingresa_Datos.swNubeDePuntos = 1;
+            menuDeModosDeAproximacion.Visible = true;
+        }
     }
 }

@@ -32,6 +32,8 @@ namespace WindowsFormsApplication5
         public static double sumatoriaUnoDivididoY; // (1/y)
         public static double sumatoriaLogaritmoXAlCuadrado;
         public static double sumatoriaLogaritmoXLogaritmoY;
+        public static int swNubeDePuntos;
+        public static int swCantPuntos;
 
         //Funciones
         public static Funcion_Lineal funcionLineal;
@@ -276,7 +278,7 @@ namespace WindowsFormsApplication5
             llenarMatrizDePuntos();
             generarFunciones();
             mostrarValores();
-
+            
         }
 
         //llena la matriz de puntos desde el DGV
@@ -285,9 +287,10 @@ namespace WindowsFormsApplication5
             int i;
             double x;
             double y;
-
+            
             cantidadDePuntos = dgvPuntos.RowCount - 1;
             puntos = new double[cantidadDePuntos, 2];
+            swCantPuntos = cantidadDePuntos;
 
 
             for (i = 0; i < cantidadDePuntos; i++)
