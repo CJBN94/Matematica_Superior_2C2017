@@ -16,5 +16,17 @@ namespace WindowsFormsApplication5
         {
             InitializeComponent();
         }
+
+        private void btnCompararAproximaciones_Click(object sender, EventArgs e)
+        {
+            Form_Comparacion_De_Aproximaciones f = new Form_Comparacion_De_Aproximaciones();
+            f.Visible = true;
+        }
+
+        private void btnAproximarFuncion_Click(object sender, EventArgs e)
+        {
+            Menu_Seleccionar_Funcion_Aproximante f = new Menu_Seleccionar_Funcion_Aproximante();
+            f.Visible = true;
+        }
     }
 }

@@ -28,38 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAproximarFuncion = new System.Windows.Forms.Button();
+            this.btnCompararAproximaciones = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button5
+            // btnAproximarFuncion
             // 
-            this.button5.Location = new System.Drawing.Point(12, 86);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(288, 61);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Aproximar Con Una Función";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAproximarFuncion.Location = new System.Drawing.Point(12, 86);
+            this.btnAproximarFuncion.Name = "btnAproximarFuncion";
+            this.btnAproximarFuncion.Size = new System.Drawing.Size(288, 61);
+            this.btnAproximarFuncion.TabIndex = 11;
+            this.btnAproximarFuncion.Text = "Aproximar Con Una Función";
+            this.btnAproximarFuncion.UseVisualStyleBackColor = true;
+            this.btnAproximarFuncion.Click += new System.EventHandler(this.btnAproximarFuncion_Click);
             // 
-            // button1
+            // btnCompararAproximaciones
             // 
-            this.button1.Location = new System.Drawing.Point(12, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(289, 61);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Comparar Aproximaciones";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCompararAproximaciones.Location = new System.Drawing.Point(12, 183);
+            this.btnCompararAproximaciones.Name = "btnCompararAproximaciones";
+            this.btnCompararAproximaciones.Size = new System.Drawing.Size(289, 61);
+            this.btnCompararAproximaciones.TabIndex = 16;
+            this.btnCompararAproximaciones.Text = "Comparar Aproximaciones";
+            this.btnCompararAproximaciones.UseVisualStyleBackColor = true;
+            this.btnCompararAproximaciones.Click += new System.EventHandler(this.btnCompararAproximaciones_Click);
             // 
-            // button2
+            // btnFinalizar
             // 
-            this.button2.Location = new System.Drawing.Point(11, 277);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(289, 61);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Finalizar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Location = new System.Drawing.Point(11, 277);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(289, 61);
+            this.btnFinalizar.TabIndex = 17;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -71,16 +73,16 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "¿Qué desea hacer?";
             // 
-            // Form2
+            // Menu_Seleccionar_Funcionalidades_Principales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 374);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button5);
-            this.Name = "Form2";
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.btnCompararAproximaciones);
+            this.Controls.Add(this.btnAproximarFuncion);
+            this.Name = "Menu_Seleccionar_Funcionalidades_Principales";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -89,9 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAproximarFuncion;
+        private System.Windows.Forms.Button btnCompararAproximaciones;
+        private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Label label1;
     }
 }

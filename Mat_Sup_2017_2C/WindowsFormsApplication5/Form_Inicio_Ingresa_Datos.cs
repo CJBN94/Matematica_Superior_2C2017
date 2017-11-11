@@ -35,6 +35,7 @@ namespace WindowsFormsApplication5
         public static int swNubeDePuntos;
         public static int swCantPuntos;
 
+
         //Funciones
         public static Funcion_Lineal funcionLineal;
         public static Funcion_Exponencial funcionExponencial;
@@ -100,7 +101,7 @@ namespace WindowsFormsApplication5
                     }
                 }
 
-                
+
                 // Verifico que solo tenga un decimal la cadena de texto
                 if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
                 {
@@ -117,36 +118,6 @@ namespace WindowsFormsApplication5
             }
 
         }
-         
-        /*
-        private void limitarCantidadDeDecimalesDeLaCoordenadaX_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            String decimales = cantidadDeDecimales.ToString();
-            bool cumpleLimiteDeDecimales = Regex.IsMatch(txtCoordenadaX.Text, "^\\d*\\,\\d{"+cantidadDeDecimales+"}$");
-            if (cumpleLimiteDeDecimales&&(!char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void limitarCantidadDeDecimalesDeLaCoordenadaY_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            String decimales = cantidadDeDecimales.ToString();
-
-            if (decimales != "0")
-            {
-                bool cumpleLimiteDeDecimales = Regex.IsMatch(txtCoordenadaY.Text, "^\\d*\\,\\d{" + cantidadDeDecimales + "}$");
-                if (cumpleLimiteDeDecimales && (!char.IsControl(e.KeyChar)))
-                {
-                    e.Handled = true;
-                }
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
-        */
 
         //Evento que limita la cantidad de decimales de un numero
 
@@ -193,7 +164,7 @@ namespace WindowsFormsApplication5
             }
             else
             {
-                    MessageBox.Show("Coordenada X o Coordenada Y vacía. Inserte ambos valores de las coordenadas.", "Coordenadas vacías", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Coordenada X o Coordenada Y vacía. Inserte ambos valores de las coordenadas.", "Coordenadas vacías", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -239,7 +210,7 @@ namespace WindowsFormsApplication5
             }
             else
             {
-                MessageBox.Show("Inserte la cantidad de decimales con la que desea trabajar","Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Inserte la cantidad de decimales con la que desea trabajar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -247,7 +218,7 @@ namespace WindowsFormsApplication5
         {
             btnFijarDecimales.Enabled = true;
             txtCantidadDeDecimales.Enabled = true;
-            btnQuitarTodos_Click(sender,e);
+            btnQuitarTodos_Click(sender, e);
             txtCoordenadaX.Text = "";
             txtCoordenadaY.Text = "";
             this.setearEstadoInicial();
@@ -255,30 +226,12 @@ namespace WindowsFormsApplication5
 
         private void btnIngresarDatos_Click(object sender, EventArgs e)
         {
-            //calcularValores(); //Calcula las sumatorias
-            //mostrarValores(); //Muestra los valores de las sumatorias calculadas (Debug)
-
-            //Guardo las funciones como variables globales y calculo sus coeficientes
-            /*
-            funcionLineal = new Funcion_Lineal();
-            funcionCuadratica = new Funcion_Cuadratica();
-            funcionExponencial = new Funcion_Exponencial();
-            funcionHiperbolica = new Funcion_Hiperbolica();
-            funcionPotencial = new Funcion_Potencial();
-            funcionLineal.generarCoeficientes();
-            funcionCuadratica.generarCoeficientes();
-            funcionExponencial.generarCoeficientes();
-            funcionHiperbolica.generarCoeficientes();
-            funcionPotencial.generarCoeficientes();
-            */
-            /*Menu_Seleccionar_Funcionalidades_Principales frmSeleccionDeFuncionalidades = new Menu_Seleccionar_Funcionalidades_Principales();
-            frmSeleccionDeFuncionalidades.Visible = true;
-            this.Visible = false;*/
-
             llenarMatrizDePuntos();
             generarFunciones();
             mostrarValores();
-            
+            Menu_Seleccionar_Funcionalidades_Principales frmSeleccionDeFuncionalidades = new Menu_Seleccionar_Funcionalidades_Principales();
+            frmSeleccionDeFuncionalidades.Visible = true;
+            this.Visible = false;
         }
 
         //llena la matriz de puntos desde el DGV
@@ -287,7 +240,7 @@ namespace WindowsFormsApplication5
             int i;
             double x;
             double y;
-            
+
             cantidadDePuntos = dgvPuntos.RowCount - 1;
             puntos = new double[cantidadDePuntos, 2];
             swCantPuntos = cantidadDePuntos;
@@ -340,7 +293,8 @@ namespace WindowsFormsApplication5
 
         //Metodo que calcula los valores de las sumatorias (no funciona)
 
-        private void calcularValores(){
+        private void calcularValores()
+        {
             double x = 0;
             double y = 0;
 
@@ -413,30 +367,30 @@ namespace WindowsFormsApplication5
             //Prueba de funcion exponencial(OK)
 
             MessageBox.Show("coeficiente a: " + funcionExponencial.getCoeficienteA() + "\n" +
-                "coeficiente b: " + funcionExponencial.getCoeficienteB(), "Prueba",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            
+                "coeficiente b: " + funcionExponencial.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             //Prueba de funcion cuadratica(OK)
 
             MessageBox.Show("coeficiente a: " + funcionCuadratica.getCoeficienteA() + "\n" +
                 "coeficiente b: " + funcionCuadratica.getCoeficienteB() + "\n" +
                 "coeficiente c: " + funcionCuadratica.getCoeficienteC(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
+
             //Prueba de funcion lineal(OK)
             MessageBox.Show("coeficiente a: " + funcionLineal.getCoeficienteA() + "\n" +
                 "coeficiente b: " + funcionLineal.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             //Prueba de funcion potencial(OK)
 
             MessageBox.Show("coeficiente a: " + funcionPotencial.getCoeficienteA() + "\n" +
                 "coeficiente b: " + funcionPotencial.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
 
             //Prueba de funcion hiperbolica(OK)
 
             MessageBox.Show("coeficiente a: " + funcionHiperbolica.getCoeficienteA() + "\n" +
                 "coeficiente b: " + funcionHiperbolica.getCoeficienteB(), "Prueba", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
         }
 
     }

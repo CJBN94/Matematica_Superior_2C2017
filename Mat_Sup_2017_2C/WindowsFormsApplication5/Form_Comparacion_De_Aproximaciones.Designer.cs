@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Datos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnMejorAproximacion = new System.Windows.Forms.Button();
+            this.dgvComparacion = new System.Windows.Forms.DataGridView();
             this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Xi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Yi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,50 +38,27 @@
             this.Hiperbólica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Potencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exponencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.ErrorFuncionLineal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorFuncionCuadratica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorFuncionHiperbolica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorFuncionPotencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorFuncionExponencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComparacion)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // btnMejorAproximacion
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Datos,
-            this.modelos,
-            this.Error});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(748, 24);
-            this.dataGridView1.TabIndex = 17;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.btnMejorAproximacion.Location = new System.Drawing.Point(287, 433);
+            this.btnMejorAproximacion.Name = "btnMejorAproximacion";
+            this.btnMejorAproximacion.Size = new System.Drawing.Size(205, 23);
+            this.btnMejorAproximacion.TabIndex = 19;
+            this.btnMejorAproximacion.Text = "Mostrar Mejor Aproximacion";
+            this.btnMejorAproximacion.UseVisualStyleBackColor = true;
             // 
-            // Datos
+            // dgvComparacion
             // 
-            this.Datos.HeaderText = "Datos";
-            this.Datos.Name = "Datos";
-            this.Datos.ReadOnly = true;
-            // 
-            // modelos
-            // 
-            this.modelos.HeaderText = "Modelos Aproximantes";
-            this.modelos.Name = "modelos";
-            this.modelos.ReadOnly = true;
-            // 
-            // Error
-            // 
-            this.Error.HeaderText = "Error";
-            this.Error.Name = "Error";
-            this.Error.ReadOnly = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvComparacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComparacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.i,
             this.Xi,
             this.Yi,
@@ -92,13 +66,17 @@
             this.Cuadrática,
             this.Hiperbólica,
             this.Potencial,
-            this.Exponencial});
-            this.dataGridView2.Location = new System.Drawing.Point(13, 42);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(747, 124);
-            this.dataGridView2.TabIndex = 18;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.Exponencial,
+            this.ErrorFuncionLineal,
+            this.ErrorFuncionCuadratica,
+            this.ErrorFuncionHiperbolica,
+            this.ErrorFuncionPotencial,
+            this.ErrorFuncionExponencial});
+            this.dgvComparacion.Location = new System.Drawing.Point(12, 12);
+            this.dgvComparacion.Name = "dgvComparacion";
+            this.dgvComparacion.ReadOnly = true;
+            this.dgvComparacion.Size = new System.Drawing.Size(797, 405);
+            this.dgvComparacion.TabIndex = 20;
             // 
             // i
             // 
@@ -148,38 +126,55 @@
             this.Exponencial.Name = "Exponencial";
             this.Exponencial.ReadOnly = true;
             // 
-            // button1
+            // ErrorFuncionLineal
             // 
-            this.button1.Location = new System.Drawing.Point(270, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(205, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Mostrar Mejor Aproximacion";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ErrorFuncionLineal.HeaderText = "Error Funcion Lineal";
+            this.ErrorFuncionLineal.Name = "ErrorFuncionLineal";
+            this.ErrorFuncionLineal.ReadOnly = true;
             // 
-            // Form7
+            // ErrorFuncionCuadratica
+            // 
+            this.ErrorFuncionCuadratica.HeaderText = "Error Funcion Cuadratica";
+            this.ErrorFuncionCuadratica.Name = "ErrorFuncionCuadratica";
+            this.ErrorFuncionCuadratica.ReadOnly = true;
+            // 
+            // ErrorFuncionHiperbolica
+            // 
+            this.ErrorFuncionHiperbolica.HeaderText = "Error Funcion Hiperbolica";
+            this.ErrorFuncionHiperbolica.Name = "ErrorFuncionHiperbolica";
+            this.ErrorFuncionHiperbolica.ReadOnly = true;
+            // 
+            // ErrorFuncionPotencial
+            // 
+            this.ErrorFuncionPotencial.HeaderText = "Error Funcion Potencial";
+            this.ErrorFuncionPotencial.Name = "ErrorFuncionPotencial";
+            this.ErrorFuncionPotencial.ReadOnly = true;
+            // 
+            // ErrorFuncionExponencial
+            // 
+            this.ErrorFuncionExponencial.HeaderText = "Error Funcion Exponencial";
+            this.ErrorFuncionExponencial.Name = "ErrorFuncionExponencial";
+            this.ErrorFuncionExponencial.ReadOnly = true;
+            // 
+            // Form_Comparacion_De_Aproximaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 223);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form7";
-            this.Text = "Form7";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.ClientSize = new System.Drawing.Size(821, 468);
+            this.Controls.Add(this.dgvComparacion);
+            this.Controls.Add(this.btnMejorAproximacion);
+            this.Name = "Form_Comparacion_De_Aproximaciones";
+            this.Text = "Comparacion de funciones";
+            this.Load += new System.EventHandler(this.Form_Comparacion_De_Aproximaciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComparacion)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Datos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Error;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnMejorAproximacion;
+        private System.Windows.Forms.DataGridView dgvComparacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn i;
         private System.Windows.Forms.DataGridViewTextBoxColumn Xi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Yi;
@@ -188,6 +183,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Hiperbólica;
         private System.Windows.Forms.DataGridViewTextBoxColumn Potencial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Exponencial;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorFuncionLineal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorFuncionCuadratica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorFuncionHiperbolica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorFuncionPotencial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorFuncionExponencial;
     }
 }

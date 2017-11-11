@@ -1,6 +1,5 @@
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\Mat_Sup_2017_2C.csprojResolveAssemblyReference.cache
-C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\TP_MateSuperior.frmGraficador.resources
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Menu_Seleccionar_Funcionalidades_Principales.resources
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Form_Inicio_Ingresa_Datos.resources
 C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Menu_Seleccionar_Funcion_Aproximante.resources
@@ -16,3 +15,4 @@ C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\Windo
 C:\FILEs\Matematica Superior\TP 2C2017\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
 C:\FILEs\Matematica Superior\TP 2C2017\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.exe
 C:\FILEs\Matematica Superior\TP 2C2017\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb
+C:\Users\julia\Documents\GitHub\Matematica_Superior_2C2017\Mat_Sup_2017_2C\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.frmGraficador.resources
