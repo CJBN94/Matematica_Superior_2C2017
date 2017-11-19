@@ -31,7 +31,7 @@ namespace WindowsFormsApplication5
             //double bMayuscula = 0;
             //double aMayuscula1 = (sumatoriaXDivididoY - bMayuscula * sumatoriaX) / sumatoriaXCuadrado;
             //double aMayuscula2 = (sumatoriaUnoDivididoY - bMayuscula * cantidadDePuntos) / sumatoriaX;
-            double bMayuscula = Math.Round((sumatoriaX * sumatoriaXDivididoY - sumatoriaUnoDivididoY * sumatoriaXCuadrado) / ((sumatoriaX * sumatoriaX) - (cantidadDePuntos * sumatoriaXCuadrado)),cantidadDeDecimales);
+            double bMayuscula = (sumatoriaX * sumatoriaXDivididoY - sumatoriaUnoDivididoY * sumatoriaXCuadrado) / ((sumatoriaX * sumatoriaX) - (cantidadDePuntos * sumatoriaXCuadrado));
             double aMayuscula = Math.Round((sumatoriaUnoDivididoY - bMayuscula * cantidadDePuntos) / sumatoriaX, cantidadDeDecimales);
             a = Math.Round(1 / aMayuscula,cantidadDeDecimales);
             b = Math.Round(bMayuscula * a, cantidadDeDecimales);

@@ -13,6 +13,7 @@ namespace WindowsFormsApplication5
 {
     public partial class Form_Inicio_Ingresa_Datos : Form
     {
+        public static Form_Inicio_Ingresa_Datos formInicio = null;
         public static int cantidadDeDecimales;
         public static double[,] puntos;
         public static int cantidadDePuntos;
@@ -46,6 +47,50 @@ namespace WindowsFormsApplication5
         public Form_Inicio_Ingresa_Datos()
         {
             InitializeComponent();
+            this.Visible = true;
+            if (formInicio == null)
+            {
+                formInicio = this;
+            }
+        }
+
+        //Reinicia los datos
+
+        public void retornarAEstadoInicial()
+        {
+            cantidadDeDecimales = 0;
+            puntos = null;
+            cantidadDePuntos = 0;
+            sumatoriaX = 0;
+            sumatoriaXCuadrado = 0;
+            sumatoriaXCubo = 0;
+            sumatoriaXCuarta = 0;
+            sumatoriaLogaritmoX = 0;
+            sumatoriaY = 0;
+            sumatoriaYCuadrado = 0;
+            sumatoriaLogaritmoY = 0;
+            sumatoriaXY = 0;
+            sumatoriaXConYCuadrado = 0;
+            sumatoriaXLogaritmoY = 0;
+            sumatoriaXCuadradoY = 0;
+            sumatoriaXDivididoY = 0;
+            sumatoriaUnoDivididoY = 0;
+            sumatoriaLogaritmoXAlCuadrado = 0;
+            sumatoriaLogaritmoXLogaritmoY = 0;
+            swNubeDePuntos = 0;
+            swCantPuntos = 0;
+
+            setearEstadoInicialDeComponentesContenedores();
+            setearVisibilidadInicialDeComponentes();
+        }
+
+        //Setea el estado inicial de campos de texto y matrices
+
+        private void setearEstadoInicialDeComponentesContenedores(){
+            this.txtCoordenadaX.Clear();
+            this.txtCantidadDeDecimales.Clear();
+            this.txtCoordenadaY.Clear();
+            this.dgvPuntos.Rows.Clear();
         }
 
         //Agrego los eventos para controlar que los textbox acepten lo que necesiten
@@ -53,14 +98,16 @@ namespace WindowsFormsApplication5
         private void Form_Inicio_Ingresa_Datos_Load(object sender, EventArgs e)
         {
             this.setearEventosDeTextBox();
-            this.setearEstadoInicial();
+            this.setearVisibilidadInicialDeComponentes();
             this.CenterToScreen();
         }
 
         //Deshabilito los objetos necesarios para dar el estado inicial
 
-        private void setearEstadoInicial()
+        private void setearVisibilidadInicialDeComponentes()
         {
+            txtCantidadDeDecimales.Enabled = true;
+            btnFijarDecimales.Enabled = true;
             txtCoordenadaX.Enabled = false;
             txtCoordenadaY.Enabled = false;
             btnAgregarPunto.Enabled = false;
@@ -221,7 +268,7 @@ namespace WindowsFormsApplication5
             btnQuitarTodos_Click(sender, e);
             txtCoordenadaX.Text = "";
             txtCoordenadaY.Text = "";
-            this.setearEstadoInicial();
+            this.setearVisibilidadInicialDeComponentes();
         }
 
         private void btnIngresarDatos_Click(object sender, EventArgs e)
